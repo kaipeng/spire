@@ -22,7 +22,7 @@ BASE_DIR = os.path.abspath(os.path.join(SITE_ROOT, ".."))
 
 # Heroku platform settings.
 
-HEROKU_APP_NAME = "spire"
+HEROKU_APP_NAME = "spire1"
 
 HEROKU_BUILDPACK_URL = "https://github.com/heroku/heroku-buildpack-python.git"
 
@@ -31,7 +31,7 @@ HEROKU_BUILDPACK_URL = "https://github.com/heroku/heroku-buildpack-python.git"
 
 SITE_NAME = "Example"
 
-SITE_DOMAIN = "spire.herokuapp.com"
+SITE_DOMAIN = "spire1.herokuapp.com"
 
 PREPEND_WWW = False
 
