@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT spire1.wsgi:application
+web: waitress-serve --port=$PORT spire.wsgi:application
