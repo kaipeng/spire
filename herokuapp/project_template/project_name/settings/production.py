@@ -22,7 +22,7 @@ BASE_DIR = os.path.abspath(os.path.join(SITE_ROOT, ".."))
 
 # Heroku platform settings.
 
-HEROKU_APP_NAME = "spire1"
+HEROKU_APP_NAME = "{{ app_name }}"
 
 HEROKU_BUILDPACK_URL = "https://github.com/heroku/heroku-buildpack-python.git"
 
@@ -31,7 +31,7 @@ HEROKU_BUILDPACK_URL = "https://github.com/heroku/heroku-buildpack-python.git"
 
 SITE_NAME = "Example"
 
-SITE_DOMAIN = "spire1.herokuapp.com"
+SITE_DOMAIN = "{{ app_name }}.herokuapp.com"
 
 PREPEND_WWW = False
 
@@ -89,9 +89,10 @@ AWS_REDUCED_REDUNDANCY = False
 
 AWS_IS_GZIPPED = False
 
-STATIC_URL = "https://s3.amazonaws.com/{bucket_name}/".format(
+STATIC_URL = "https://{bucket_name}.s3.amazonaws.com/".format(
     bucket_name = AWS_STORAGE_BUCKET_NAME,
-    )
+)
+
 
 # Email settings.
 
@@ -170,9 +171,9 @@ MIDDLEWARE_CLASSES = (
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 )
 
-ROOT_URLCONF = "spire.urls"
+ROOT_URLCONF = "{{ project_name }}.urls"
 
-WSGI_APPLICATION = "spire.wsgi.application"
+WSGI_APPLICATION = "{{ project_name }}.wsgi.application"
 
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 
@@ -208,7 +209,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 # Namespace for cache keys, if using a process-shared cache.
 
-CACHE_MIDDLEWARE_KEY_PREFIX = "spire"
+CACHE_MIDDLEWARE_KEY_PREFIX = "{{ project_name }}"
 
 CACHES = {
     "default": {
